@@ -10,6 +10,8 @@ import AppBar from '@mui/material/AppBar';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 const array = ["Write","Authors"]
+
+
 const Navbar = () => {
   const navigate = useNavigate()
   const [anchorElNav,setAnchorElNav] = useState(null)
@@ -61,15 +63,16 @@ const Navbar = () => {
             </Box>
             <Box sx={{display:{xs:'none',md:'flex'},ml:3}} flexGrow={1}>
               
-               
                   <Button  color='inherit' size='large'startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
                   <Button  color='inherit' size='large'  onClick={()=>{navigate('/authors')}} startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
             </Box>
+            <Button onClick={()=>{navigate('/')}}  variant='contained' sx={{"&:focus":{outline:'none'},display:{xs:'flex',md:'none',flexGrow:1},marginRight:9,width:'80px',justifyContent:'center'}}>
             <AlternateEmailIcon sx={{display:{xs:'flex',md:'none'},mr:1}}/>
-            <Typography flexGrow={1} sx={{display:{xs:'flex',md:'none'}}} variant='h6'>
+            <Typography  flexGrow={1} sx={{display:{xs:'flex',md:'none'}}} variant='h6'>
               BlogBloom
             </Typography>
-            <Box>
+            </Button>
+            <Box marginLeft={1}>
               <IconButton onClick={handleOpenUserMenu} sx={{"&:focus":{outline:'none'}}}>
                 <Avatar src='https://wallpapercave.com/wp/wp12944056.jpg' />
                 </IconButton>  
