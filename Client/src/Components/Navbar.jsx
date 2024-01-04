@@ -8,7 +8,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import { Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const array = ["Write","Authors"]
 
 
@@ -54,8 +54,8 @@ const Navbar = () => {
                 onClose={handleCloseNavMenu}
                 >
                   {
-                    array.map((title)=>{
-                      return <MenuItem href='/authors' sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
+                    array.map((title,i)=>{
+                      return <MenuItem LinkComponent={<Link to={`/${array[i]}`}/>} sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
                        <Typography  display='block'>{title}</Typography></MenuItem>
                     })
                   }
