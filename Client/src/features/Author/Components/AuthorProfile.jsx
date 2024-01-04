@@ -10,7 +10,7 @@ const AuthorProfile = () => {
             <Button variant='contained' sx={{marginLeft:'auto'}}>Follow</Button>
         </Box>
         <Box>
-            
+
         </Box>
     </Stack>
   );

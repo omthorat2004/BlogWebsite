@@ -8,8 +8,10 @@ import PeopleIcon from '@mui/icons-material/People';
 import { Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const array = ["Write","Authors"]
 const Navbar = () => {
+  const navigate = useNavigate()
   const [anchorElNav,setAnchorElNav] = useState(null)
   const [anchorElUser,setAnchorElUser] = useState(null)
   const handleOpenNavMenu = (event)=>{
@@ -58,7 +60,7 @@ const Navbar = () => {
             <Box sx={{display:{xs:'none',md:'flex'},ml:3}} flexGrow={1}>
               
                
-                  <Button  color='inherit' size='large' startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
+                  <Button  color='inherit' size='large' onClick={()=>{navigate('/')}} startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
                   <Button  color='inherit' size='large' startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
               
             </Box>
