@@ -31,10 +31,12 @@ const Navbar = () => {
       <AppBar position='static' >
         <Container   maxWidth='xl'>
           <Toolbar disableGutters >
+            <Button variant='contained' onClick={()=>{navigate('/')}} sx={{"&:focus":{outline:'none'}}}>
             <AlternateEmailIcon fontSize='large' sx={{mr:2,display:{xs:'none',md:'flex',cursor:'pointer'}}} />
-            <Typography   variant='h5'   sx={{display:{xs:'none',md:'flex'},"&:hover":{cursor:'pointer'}}}>
+            <Typography   variant='h5'    sx={{display:{xs:'none',md:'flex'},"&:hover":{cursor:'pointer'}}}>
               BlogBoom
             </Typography>
+            </Button>
             <Box sx={{display:{xs:'flex',md:'none'}}} flexGrow={1}>
               <IconButton sx={{"&:focus":{outline:'none'}}} onClick={handleOpenNavMenu} aria-haspopup="true"aria-controls='menu-appbar'   aria-label="account of current user" >
                 <MenuOutlinedIcon fontSize='large' sx={{m:0,color:'#fff'}} /> 
@@ -61,7 +63,7 @@ const Navbar = () => {
               
                
                   <Button  color='inherit' size='large'startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
-                  <Button  color='inherit' size='large' startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
+                  <Button  color='inherit' size='large'  onClick={()=>{navigate('/authors')}} startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
             </Box>
             <AlternateEmailIcon sx={{display:{xs:'flex',md:'none'},mr:1}}/>
             <Typography flexGrow={1} sx={{display:{xs:'flex',md:'none'}}} variant='h6'>
