@@ -44,7 +44,6 @@ const BlogCard = () => {
         <IconButton sx={{"&:focus":{outline:'none',}}}>
           <FavoriteIcon fontSize='medium' sx={{fontSize:'30px'}} />
         </IconButton>
-        
       </CardActions>
     </Card>
   );
