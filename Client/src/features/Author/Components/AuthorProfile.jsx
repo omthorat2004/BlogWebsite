@@ -9,6 +9,9 @@ const AuthorProfile = () => {
             <Typography sx={{fontSize:{xs:'15px',md:'20px'},margin:{xs:'0 10px',md:'0 20px'}}}>Om Thorat</Typography>
             <Button variant='contained' sx={{marginLeft:'auto'}}>Follow</Button>
         </Box>
+        <Box>
+            
+        </Box>
     </Stack>
   );
 }
