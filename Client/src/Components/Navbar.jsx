@@ -55,7 +55,7 @@ const Navbar = () => {
                 >
                   {
                     array.map((title,i)=>{
-                      return <MenuItem LinkComponent={<Link to={`/${array[i]}`}/>} sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
+                      return <MenuItem component={Link} to={`/${array[i]}`} sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
                        <Typography  display='block'>{title}</Typography></MenuItem>
                     })
                   }
