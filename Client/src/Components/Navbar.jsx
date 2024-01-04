@@ -55,7 +55,7 @@ const Navbar = () => {
                 >
                   {
                     array.map((title)=>{
-                      return <MenuItem sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
+                      return <MenuItem href='/authors' sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
                        <Typography  display='block'>{title}</Typography></MenuItem>
                     })
                   }
@@ -66,7 +66,7 @@ const Navbar = () => {
                   <Button  color='inherit' size='large'startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
                   <Button  color='inherit' size='large'  onClick={()=>{navigate('/authors')}} startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
             </Box>
-            <Button onClick={()=>{navigate('/')}}  variant='contained' sx={{"&:focus":{outline:'none'},display:{xs:'flex',md:'none',flexGrow:1},marginRight:9,width:'80px',justifyContent:'center'}}>
+            <Button onClick={()=>{navigate('/')}}  variant='contained' sx={{"&:focus":{outline:'none'},display:{xs:'flex',md:'none',flexGrow:1},marginRight:9,justifyContent:'center'}}>
             <AlternateEmailIcon sx={{display:{xs:'flex',md:'none'},mr:1}}/>
             <Typography  flexGrow={1} sx={{display:{xs:'flex',md:'none'}}} variant='h6'>
               BlogBloom
