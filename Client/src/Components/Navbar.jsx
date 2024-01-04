@@ -85,7 +85,7 @@ const Navbar = () => {
                  onClose={handleCloseUserMenu}
                  sx={{mt:5}}
                  >
-                    <MenuItem><Button sx={{"&:focus":{outline:'none',backgroundColor:'none'},"&:hover":{backgroundColor:'none'}}}  startIcon={<AccountBoxIcon/>}>Profile</Button></MenuItem>
+                    <MenuItem component={Link} to='/profile'><Button sx={{"&:focus":{outline:'none',backgroundColor:'none'},"&:hover":{backgroundColor:'none'}}}  startIcon={<AccountBoxIcon/>}>Profile</Button></MenuItem>
                     <MenuItem><Button sx={{"&:focus":{outline:'none'}}} startIcon={<ExitToAppIcon/>}>Signout</Button></MenuItem>
                  </Menu>
              
