@@ -31,7 +31,7 @@ const Navbar = () => {
       <AppBar position='static' >
         <Container   maxWidth='xl'>
           <Toolbar disableGutters >
-            <Button variant='contained' onClick={()=>{navigate('/')}} sx={{"&:focus":{outline:'none'}}}>
+            <Button variant='contained' onClick={()=>{navigate('/')}} sx={{"&:focus":{outline:'none',display:{xs:'none',md:'flex'}}}}>
             <AlternateEmailIcon fontSize='large' sx={{mr:2,display:{xs:'none',md:'flex',cursor:'pointer'}}} />
             <Typography   variant='h5'    sx={{display:{xs:'none',md:'flex'},"&:hover":{cursor:'pointer'}}}>
               BlogBoom
