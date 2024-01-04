@@ -60,9 +60,8 @@ const Navbar = () => {
             <Box sx={{display:{xs:'none',md:'flex'},ml:3}} flexGrow={1}>
               
                
-                  <Button  color='inherit' size='large' onClick={()=>{navigate('/')}} startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
+                  <Button  color='inherit' size='large'startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
                   <Button  color='inherit' size='large' startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
-              
             </Box>
             <AlternateEmailIcon sx={{display:{xs:'flex',md:'none'},mr:1}}/>
             <Typography flexGrow={1} sx={{display:{xs:'flex',md:'none'}}} variant='h6'>
