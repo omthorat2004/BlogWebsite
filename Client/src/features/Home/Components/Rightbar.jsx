@@ -23,7 +23,7 @@ const Rightbar = () => {
    } 
   }
   return (
-    <Box flex={{md:3,sm:5}} display={{xs:'none',sm:'flex'}} position='sticky' maxHeight={800}  flexDirection='column' sx={{backgroundColor:'white',padding:3,boxSizing:'border-box',borderRadius:'20px',top:'20px'}} >
+    <Box flex={{md:3,sm:5}} display={{xs:'none',sm:'flex'}} position='sticky'  maxHeight={800}  flexDirection='column' sx={{backgroundColor:'white',padding:3,boxSizing:'border-box',borderRadius:'20px',top:'20px'}} >
         <StyledBox >
           <Chip label='Recent'  clickable color='primary'sx={{fontSize:{lg:'17px',md:'15px',sm:'12px'}}} / >
           <Chip label='Top'  clickable color='primary' sx={{fontSize:{lg:'17px',md:'15px',sm:'12px'}}} />

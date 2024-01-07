@@ -39,7 +39,7 @@ const FollowingCard = () => {
             <Typography variant='body3' fontSize={{xs:14,md:18}} fontWeight={500}>Om Thorat</Typography>
         </Box>
         
-        <Box >
+        <Box display='flex' alignItems='center' >
             <StyledButton variant='contained' size={buttonSize}   sx={{ '& .MuiButton-startIcon': { marginRight:{xs:0,md:1} } }}  onClick={handleClick}  startIcon={clicked? <PersonAddAltIcon/>:<PersonRemoveIcon  />}>{isSmallScreen?(''):clicked?"Follow":"Unfollow"}</StyledButton>
             <StyledButton variant='contained' size={buttonSize}   sx={{ '& .MuiButton-startIcon': { marginRight: {xs:0,md:1} } }}    startIcon={<LaunchIcon fontSize='small'/>}>{isSmallScreen?'':'Visit'}</StyledButton>
         </Box>

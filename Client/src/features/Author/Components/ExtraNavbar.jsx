@@ -8,9 +8,15 @@ const StyledChip = styled(Chip)({
 })
 const array=["Top","Food","Travel","Education","Lifestyle","Business","Gaming","Sports"]
 const ExtraNavbar = () => {
-    const [selectedIndex,setSelected]=useState()
+    const [selectedIndex,setSelected]=useState(null)
+    console.log(selectedIndex)
     const handleClick = (e,index)=>{
-        setSelected(index)
+      // console.log(index)
+        if(selectedIndex==index){
+          setSelected(null)
+        }else{
+          setSelected(index)
+        }
     }
   return (
     <Box flexBasis='100%' display='flex' columnGap={{xs:2,sm:5,md:7}} rowGap={2} justifyContent='center' flexWrap='wrap'> 
