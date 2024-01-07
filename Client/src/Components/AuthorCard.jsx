@@ -15,7 +15,7 @@ const AuthorCard = () => {
         </Typography>
         </CardContent>
         <CardContent>
-        <CardActions buttonFlex="1" sx={{alignItems:'center',display:'flex',flexDirection:'column'}} >
+        <CardActions disableSpacing buttonFlex="1" sx={{alignItems:'center',display:'flex',flexDirection:'column'}} >
           <ButtonGroup variant="contained" sx={{ bgcolor: 'background.surface' }}>
             <Button startIcon={<PersonAddIcon/>} sx={{"&:focus":{outline:'none'}}}>Follow</Button>
             <Button startIcon={<LaunchIcon/>} sx={{"&:focus":{outline:'none'}}}>Profile</Button>

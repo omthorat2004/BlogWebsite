@@ -34,7 +34,7 @@ const Sidebar = () => {
                 <ListItemIcon >
                     <AccountCircleIcon color='primary'/>
                 </ListItemIcon>
-                <ListItemText sx={{color:'#0275d8'}}>
+                <ListItemText  sx={{color:'#0275d8'}}>
                     {ele}
                 </ListItemText>
             </ListItemButton>

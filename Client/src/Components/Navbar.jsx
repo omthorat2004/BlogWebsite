@@ -39,7 +39,7 @@ const Navbar = () => {
               BlogBoom
             </Typography>
             </Button>
-            <Box sx={{display:{xs:'flex',md:'none'}}} flexGrow={1}>
+            <Box sx={{display:{xs:'flex',md:'none'}}} marginRight='auto' >
               <IconButton sx={{"&:focus":{outline:'none'}}} onClick={handleOpenNavMenu} aria-haspopup="true"aria-controls='menu-appbar'   aria-label="account of current user" >
                 <MenuOutlinedIcon fontSize='large' sx={{m:0,color:'#fff'}} /> 
               </IconButton>  
@@ -66,13 +66,13 @@ const Navbar = () => {
                   <Button  color='inherit' size='large'startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
                   <Button  color='inherit' size='large'  onClick={()=>{navigate('/authors')}} startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
             </Box>
-            <Button onClick={()=>{navigate('/')}}  variant='contained' sx={{"&:focus":{outline:'none'},display:{xs:'flex',md:'none',flexGrow:1},marginRight:9,justifyContent:'center'}}>
-            <AlternateEmailIcon sx={{display:{xs:'flex',md:'none'},mr:1}}/>
-            <Typography  flexGrow={1} sx={{display:{xs:'flex',md:'none'}}} variant='h6'>
-              BlogBloom
-            </Typography>
+            <Button onClick={()=>{navigate('/')}}  variant='contained' sx={{"&:focus":{outline:'none'},display:{xs:'flex',md:'none',flexGrow:0},marginLeft:2,justifyContent:'center'}}>
+              <AlternateEmailIcon sx={{display:{xs:'flex',md:'none'},mr:1}}/>
+              <Typography  flexGrow={1} sx={{display:{xs:'flex',md:'none'}}} fontSize={{xs:'15px'}} variant='h6'>
+                BlogBloom
+              </Typography>
             </Button>
-            <Box marginLeft={1}>
+            <Box marginLeft='auto'>
               <IconButton onClick={handleOpenUserMenu} sx={{"&:focus":{outline:'none'}}}>
                 <Avatar src='https://wallpapercave.com/wp/wp12944056.jpg' />
                 </IconButton>  
@@ -85,8 +85,8 @@ const Navbar = () => {
                  onClose={handleCloseUserMenu}
                  sx={{mt:5}}
                  >
-                    <MenuItem component={Link} to='/profile'><Button sx={{"&:focus":{outline:'none',backgroundColor:'none'},"&:hover":{backgroundColor:'none'}}}  startIcon={<AccountBoxIcon/>}>Profile</Button></MenuItem>
-                    <MenuItem><Button sx={{"&:focus":{outline:'none'}}} startIcon={<ExitToAppIcon/>}>Signout</Button></MenuItem>
+                    <MenuItem component={Link} to='/profile'><Button onClick={handleCloseUserMenu} sx={{"&:focus":{outline:'none',backgroundColor:'none'},"&:hover":{backgroundColor:'none'}}}  startIcon={<AccountBoxIcon/>}>Profile</Button></MenuItem>
+                    <MenuItem conponent={Link} to='/author/1'><Button sx={{"&:focus":{outline:'none'}}} onClick={handleCloseUserMenu}  startIcon={<ExitToAppIcon/>}>Signout</Button></MenuItem>
                  </Menu>
              
             </Box>
