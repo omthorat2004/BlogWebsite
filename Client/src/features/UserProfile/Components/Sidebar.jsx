@@ -24,7 +24,7 @@ const Sidebar = () => {
     }
    }
   return (
-   <Box flex={{xs:1,md:3}} position='sticky' top={0} maxHeight={780} border='solid black 1px' bgcolor='#F5F7F8'>
+   <Box flex={{xs:1,md:3}} sx={{backgroundColor:'whitesmoke'}} position={{xs:'',md:'sticky'}} top={0} maxHeight='100vh'  border='solid black 1px' bgcolor='InfoBackground'>
    <List sx={{display:{xs:'flex',md:'block'},flexWrap:'wrap',justifyContent:{xs:'center',sm:'center'},columnGap:'10px'}}>
    {array.map((ele,index)=>{
             const bgc = currentIndex==index?'#0275d850':''
