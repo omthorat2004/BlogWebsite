@@ -33,7 +33,7 @@ const FollowingCard = () => {
           setClicked(!clicked) 
     }
   return (
-    <Box  display='flex' justifyContent='space-between' padding={3} boxShadow='0 0 5px lightgrey' mt={1} borderRadius={3} boxSizing='border-box'>
+    <Box  display='flex' justifyContent='space-between' padding={3} boxShadow='0 0 5px lightgrey'  borderRadius={3} boxSizing='border-box'>
         <Box display='flex' alignItems='center' columnGap={2}>
             <Avatar sx={{width:{xs:'25px',md:'40px'},height:{xs:'25px',md:'40px'}}} src='https://wallpapercave.com/wp/wp12944056.jpg'/>
             <Typography variant='body3' fontSize={{xs:14,md:18}} fontWeight={500}>Om Thorat</Typography>
