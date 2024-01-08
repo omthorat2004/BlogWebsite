@@ -1,9 +1,9 @@
 import { Avatar, List, ListItem, ListItemAvatar, ListItemButton, ListItemText } from '@mui/material';
 import React from 'react';
-
+import { ComponentStyle } from './style';
 const AuthorBlogs = () => {
   return (
-    <List sx={{padding:'15px',mt:'15px'}}>
+    <List sx={ComponentStyle}>
        <ListItem disablePadding  sx={{boxShadow:'0 0 8px lightgrey',borderRadius:'10px',mt:2}}>
           <ListItemButton >
             <ListItemAvatar>

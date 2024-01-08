@@ -9,6 +9,7 @@ import { Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Ty
 import AppBar from '@mui/material/AppBar';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { avatarBoxStyle } from '../features/UserProfile/Components/style';
 const array = ["Write","Authors"]
 
 
@@ -74,7 +75,9 @@ const Navbar = () => {
             </Button>
             <Box marginLeft='auto'>
               <IconButton onClick={handleOpenUserMenu} sx={{"&:focus":{outline:'none'}}}>
-                <Avatar src='https://wallpapercave.com/wp/wp12944056.jpg' />
+                <Box sx={avatarBoxStyle}>
+                  <Avatar src='https://wallpapercave.com/wp/wp12944056.jpg'  />
+                </Box>
                 </IconButton>  
                  <Menu
                  id='menu-appbar'

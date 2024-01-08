@@ -33,13 +33,13 @@ const FollowingCard = () => {
           setClicked(!clicked) 
     }
   return (
-    <Box  display='flex' justifyContent='space-between' padding={3}m={3} boxShadow='0 0 5px lightgrey' mt={1} borderRadius={3} boxSizing='border-box'>
+    <Box  display='flex' justifyContent='space-between' padding={3} boxShadow='0 0 5px lightgrey' mt={1} borderRadius={3} boxSizing='border-box'>
         <Box display='flex' alignItems='center' columnGap={2}>
-            <Avatar src='https://wallpapercave.com/wp/wp12944056.jpg'/>
+            <Avatar sx={{width:{xs:'25px',md:'40px'},height:{xs:'25px',md:'40px'}}} src='https://wallpapercave.com/wp/wp12944056.jpg'/>
             <Typography variant='body3' fontSize={{xs:14,md:18}} fontWeight={500}>Om Thorat</Typography>
         </Box>
         
-        <Box display='flex' alignItems='center' >
+        <Box display='flex' alignItems='center' justifyContent='center' flexWrap='wrap' >
             <StyledButton variant='contained' size={buttonSize}   sx={{ '& .MuiButton-startIcon': { marginRight:{xs:0,md:1} } }}  onClick={handleClick}  startIcon={clicked? <PersonAddAltIcon/>:<PersonRemoveIcon  />}>{isSmallScreen?(''):clicked?"Follow":"Unfollow"}</StyledButton>
             <StyledButton variant='contained' size={buttonSize}   sx={{ '& .MuiButton-startIcon': { marginRight: {xs:0,md:1} } }}    startIcon={<LaunchIcon fontSize='small'/>}>{isSmallScreen?'':'Visit'}</StyledButton>
         </Box>

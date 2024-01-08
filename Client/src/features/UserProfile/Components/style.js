@@ -1,0 +1,1 @@
+export const avatarBoxStyle ={backgroundImage:'linear-gradient(red, yellow)',padding:'4px',borderRadius:'50%'}
