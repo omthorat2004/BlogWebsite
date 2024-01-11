@@ -10,10 +10,10 @@ const Author = () => {
         <AuthorCard/>
         <AuthorCard/>
         <AuthorCard/>
+    
         <AuthorCard/>
         <AuthorCard/>
-        <AuthorCard/>
-        <AuthorCard/>
+       
     </Stack>
   );
 }

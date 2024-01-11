@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
-import Navbar from './Components/Navbar'
+import Layout from './Layout/Layout'
+import UserLayout from './Layout/UserLayout'
+import Login from './features/Authentication/Components/Login'
 import Author from './features/Author/Components/Author'
 import AuthorProfile from './features/Author/Components/AuthorProfile'
 import Blogs from './features/Home/Components/Blogs'
@@ -10,23 +12,26 @@ import ProfileCard from './features/UserProfile/Components/Card'
 import UserProfile from './features/UserProfile/Components/UserProfile'
 function App() {
   const [count, setCount] = useState(0)
-
+const router = createBrowserRouter([
+  {path:'/login',element:<Login/>},
+  {path:'/',element:<Layout/>,children:[
+    {index:true,element:<Home/>},
+    {path:'home',element:<Home/>},
+    {path:'authors',element:<Author/>},
+    {path:'profile',element:<UserLayout/>,children:[
+      {index:true,element:<UserProfile children={<ProfileCard/>}/>},
+      {path:'blogs',element:<UserProfile children={<Blogs/>}/>},
+      {path:'like',element:<UserProfile children={<Blogs/>}/>},
+      {path:'following',element:<UserProfile children={<Author/>}/>},
+      {path:'bookmarks',element:<UserProfile children={<Blogs/>}/>}
+    ]},
+    {path:'author/1',element:<AuthorProfile/>}
+  ]},
+ 
+])
   return (
     <>
-    <Router>
-     <Navbar/>
-      <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/authors' element={<Author/>}/>
-          <Route path='/profile' element={<UserProfile children={<ProfileCard/>}/>}/>
-          <Route path='/profile/blogs' element={<UserProfile children={<Blogs/>}/>}/>
-          <Route path='/profile/like' element={<UserProfile children={<Blogs/>}/>}/>
-          <Route path='/profile/following' element={<UserProfile children={<Author/>}/>}/>
-          <Route path='/profile/bookmarks' element={<UserProfile children={<Blogs/>}/>}/>
-          <Route path='/author/1' element={<AuthorProfile/>}/>
-      </Routes>
-     </Router>
-     
+      <RouterProvider router={router}/>
     </>
   )
 }

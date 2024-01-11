@@ -20,7 +20,7 @@ const Sidebar = () => {
     if(index==0){
         navigate('/profile')
     }else{
-        navigate(`/profile/${array[index]}`)
+        navigate(`/profile/${array[index].toLowerCase()}`)
     }
    }
   return (

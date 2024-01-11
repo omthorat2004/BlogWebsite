@@ -5,11 +5,11 @@ import React from 'react';
 // import PersonAddDisabledIcon from '@mui/icons-material/PersonAddDisabled';
 const AuthorCard = () => {
   return (
-    <Card  sx={{flex:1,minWidth:'280px',maxWidth:'600px',padding:'30px'}}  >
-        <CardContent  sx={{display:'flex',flexDirection:'column',alignItems:'center',padding:'3px'}}>
+    <Card  sx={{flex:1,minWidth:'280px',maxWidth:{sx:'600px',md:'340px'},padding:'30px'}}  >
+        <CardContent   sx={{display:'flex',flexDirection:'column',alignItems:'center',padding:'3px',maxWidth:'100%'}}>
             <Avatar src='https://wallpapercave.com/wp/wp12944056.jpg' sx={{ '--Avatar-size': '4rem'}}/>
             <Typography variant="body3" sx={{fontSize:'18px',fontWeight:'600'}}  >Om Thorat</Typography>
-            <Typography level="body-sm" sx={{ maxWidth: '24ch',opacity:0.6,fontSize:'15px' }}>
+            <Typography level="body-sm" sx={{ opacity:0.6,fontSize:'15px' }}>
           Hello, this is my bio and I am a PRO member of MUI. I am a developer and I
           love to code.
         </Typography>

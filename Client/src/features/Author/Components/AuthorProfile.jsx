@@ -52,9 +52,11 @@ const AuthorProfile = () => {
             <Typography mb={2} variant='body3' fontSize={{xs:'13px',md:'18px'}}>
               Editor of Blitzkrieg Motivation    Editor of Blitzkrieg Motivation    Editor of Blitzkrieg Motivation    Editor of Blitzkrieg Motivation    Editor of Blitzkrieg Motivation   Editor of Blitzkrieg Motivation   Editor of Blitzkrieg Motivation v v
             </Typography>
-            <Typography component={Link} color='primary'  fontSize={{xs:'13px',md:'19px'}} to='mailto:omthorat1005@gmail.com'>
-              omthorat1005@gmail.com
-            </Typography>
+            <Box>
+              <Typography component={Link} color='primary'   display='inline'  fontSize={{xs:'13px',md:'19px'}} to='mailto:omthorat1005@gmail.com'>
+                omthorat1005@gmail.com
+              </Typography>
+            </Box>
         </StyledBox>
         <ButtonGroup size={size}  sx={{mt:2,mx:1}} >
           <Button onClick={()=>handleClick('component1')}>982 Followers</Button>
@@ -62,7 +64,7 @@ const AuthorProfile = () => {
           <Button onClick={()=>handleClick('component3')}>73 Following</Button>
         </ButtonGroup>
         
-        <Box>
+        <Box  px={{xs:1,md:3}}>
           {selectedComponent}
         </Box>
         </Box> 

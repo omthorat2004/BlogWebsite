@@ -14,7 +14,7 @@ const StyledTypography = styled(Typography)(({theme})=>({
 }))
 const ProfileCard = () => {
   return (
-    <Card  sx={{flex:10,minWidth:'290px',maxWidth:'500px',position:'relative',maxHeight:'280px',padding:'10px'}}  >
+    <Card  sx={{flex:10,minWidth:'290px',mt:2,maxWidth:'500px',position:'relative',maxHeight:'280px',padding:'10px'}}  >
         <CardHeader sx={{position:'absolute',right:'0'}} action={<IconButton sx={{"&:focus":{outline:'none'}}}><ModeEditIcon/></IconButton>}/>
         <CardContent  sx={{display:'flex',flexDirection:'column',alignItems:'center',padding:'20px',}}>
             <Box  sx={avatarBoxStyle}>
