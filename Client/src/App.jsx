@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import Layout from './Layout/Layout'
 import UserLayout from './Layout/UserLayout'
-import Login from './features/Authentication/Components/Login'
+import { Login, Register, Sign } from './features/Authentication/Components'
 import Author from './features/Author/Components/Author'
 import AuthorProfile from './features/Author/Components/AuthorProfile'
 import Blogs from './features/Home/Components/Blogs'
@@ -14,6 +14,8 @@ function App() {
   const [count, setCount] = useState(0)
 const router = createBrowserRouter([
   {path:'/login',element:<Login/>},
+  {path:'/sign',element:<Sign/>},
+  {path:'/register',element:<Register/>},
   {path:'/',element:<Layout/>,children:[
     {index:true,element:<Home/>},
     {path:'home',element:<Home/>},
@@ -31,7 +33,9 @@ const router = createBrowserRouter([
 ])
   return (
     <>
+ 
       <RouterProvider router={router}/>
+    
     </>
   )
 }
