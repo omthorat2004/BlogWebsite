@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import { Avatar, Box, Card, CardContent, CardHeader, IconButton, Typography } from '@mui/material';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { currentUserSelector } from '../../Authentication/authenticationSlice';
 import { avatarBoxStyle } from './style';
 const StyledTypography = styled(Typography)(({theme})=>({
     fontSize:'12px',
@@ -13,17 +16,18 @@ const StyledTypography = styled(Typography)(({theme})=>({
     }
 }))
 const ProfileCard = () => {
+  const user = useSelector(currentUserSelector)
+  console.log(user)
   return (
     <Card  sx={{flex:10,minWidth:'290px',mt:2,maxWidth:'500px',position:'relative',maxHeight:'280px',padding:'10px'}}  >
-        <CardHeader sx={{position:'absolute',right:'0'}} action={<IconButton sx={{"&:focus":{outline:'none'}}}><ModeEditIcon/></IconButton>}/>
+        <CardHeader sx={{position:'absolute',right:'0'}} action={<IconButton component={Link} to='/register' sx={{"&:focus":{outline:'none'}}}><ModeEditIcon /></IconButton>}/>
         <CardContent  sx={{display:'flex',flexDirection:'column',alignItems:'center',padding:'20px',}}>
             <Box  sx={avatarBoxStyle}>
-              <Avatar  src='https://wallpapercave.com/wp/wp12944056.jpg' sx={{height:{xs:'40px',md:'60px'},width:{xs:'40px',md:'60px'}}}/>  
+              <Avatar  src={user.photoUrl} sx={{height:{xs:'40px',md:'60px'},width:{xs:'40px',md:'60px'}}}/>  
             </Box>
-            <Typography variant="body3" sx={{fontSize:{xs:'20px',md:'30px'},fontWeight:'600',my:'5px'}}  >Om Thorat</Typography>
+            <Typography variant="body3" sx={{fontSize:{xs:'20px',md:'30px'},fontWeight:'600',my:'5px'}}  >{user.name}</Typography>
             <Typography level="body-sm" sx={{ opacity:0.8,fontSize:{xs:'13px',md:'17px'},fontWeight:'600' }}>
-          Hello, this is my bio and I am a PRO member of MUI. I am a developer and I
-          love to code.
+          {user?.about}
         </Typography>
         <Box display='flex' mt={2}>
           <StyledTypography>89 followers</StyledTypography>

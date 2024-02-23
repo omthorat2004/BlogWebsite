@@ -25,7 +25,7 @@ const BlogCard = () => {
             <OpenInNewIcon />
           </IconButton>
         }
-        titleTypographyProps={{variant:'h5',wordWrap:'break-word',fontSize:{xs:'13px',sm:'15px',md:'23px'},flexWrap:'wrap',display:'flex' }}
+        titleTypographyProps={{variant:'h5',fontSize:{xs:'13px',sm:'15px',md:'23px'},flexWrap:'wrap',display:'flex' }}
         subheaderTypographyProps={{fontSize:{xs:'11px',sm:'15px',md:'16px'}}}
         title="Shrimp and Chorizo Paella diuweuc bueiwbdewddjh cdhjcbhjdbc hdhcbbcewciuebncbn"
         subheader="September 14, 2016"

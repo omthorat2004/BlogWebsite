@@ -5,16 +5,18 @@ import CreateIcon from '@mui/icons-material/Create';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import PeopleIcon from '@mui/icons-material/People';
-import { Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import { Avatar, Box, Button, ButtonGroup, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { currentUserSelector } from '../features/Authentication/authenticationSlice';
 import { avatarBoxStyle } from '../features/UserProfile/Components/style';
 const array = ["Write","Authors"]
 
-
 const Navbar = () => {
   const navigate = useNavigate()
+  const user = useSelector(currentUserSelector)
   const [anchorElNav,setAnchorElNav] = useState(null)
   const [anchorElUser,setAnchorElUser] = useState(null)
   const handleOpenNavMenu = (event)=>{
@@ -56,14 +58,13 @@ const Navbar = () => {
                 >
                   {
                     array.map((title,i)=>{
-                      return <MenuItem component={Link} to={`/${array[i]}`} sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
+                      return <MenuItem key={i} component={Link} to={`/${array[i]}`} sx={{width:'370px'}}  onClick={handleCloseNavMenu}>
                        <Typography  display='block'>{title}</Typography></MenuItem>
                     })
                   }
                 </Menu>  
             </Box>
             <Box sx={{display:{xs:'none',md:'flex'},ml:3}} flexGrow={1}>
-              
                   <Button  color='inherit' size='large'startIcon={<CreateIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Write</Button>
                   <Button  color='inherit' size='large'  onClick={()=>{navigate('/authors')}} startIcon={<PeopleIcon/>} sx={{mr:2,"&:focus":{outline:'none'}}}>Authors</Button>
             </Box>
@@ -74,11 +75,17 @@ const Navbar = () => {
               </Typography>
             </Button>
             <Box marginLeft='auto'>
-              <IconButton onClick={handleOpenUserMenu} sx={{"&:focus":{outline:'none'}}}>
-                <Box sx={avatarBoxStyle}>
-                  <Avatar src='https://wallpapercave.com/wp/wp12944056.jpg'  />
-                </Box>
-                </IconButton>  
+              {user&&user.id?<IconButton onClick={handleOpenUserMenu} sx={{"&:focus":{outline:'none'}}}>
+            
+                 <Box sx={avatarBoxStyle}>
+                 <Avatar src={user.photoUrl}  />
+               </Box>
+                </IconButton>:
+                <ButtonGroup variant='contained' size='large'>
+                  <Button sx={{color:'white',"&:hover":{color:'white'}}}  component={Link} to='/login'  >Login</Button>
+                  <Button sx={{color:'white',"&:hover":{color:'white'}}} component={Link} to='/sign'>Sign Up</Button>
+                </ButtonGroup>
+                }
                  <Menu
                  id='menu-appbar'
                  anchorEl={anchorElUser}

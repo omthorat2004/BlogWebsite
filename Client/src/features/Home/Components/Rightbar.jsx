@@ -32,7 +32,7 @@ const Rightbar = () => {
         <StyledBox>
           {
             array.map((title,index)=>{
-              return  <Chip label={title} color='primary'  variant='outlined' clickable onClick={(e)=>{handleClick(e,index)}} size='large' icon={index===selectedIndex?<ClearIcon/>:''} sx={{fontSize:{lg:'17px',md:'15px'}}}/>
+              return  <Chip key={index} label={title} color='primary'  variant='outlined' clickable onClick={(e)=>{handleClick(e,index)}} size='large' icon={index===selectedIndex?<ClearIcon/>:null} sx={{fontSize:{lg:'17px',md:'15px'}}}/>
             })
           }
         </StyledBox>

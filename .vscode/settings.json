@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "MySQL",
+            "name": "mysql-1dd28e59",
+            "connectString": "mysql://avnadmin:AVNS_wjibUyo5HRIa7qJRJuJ@mysql-1dd28e59-omthorat1005-c000.a.aivencloud.com:11890/defaultdb?ssl-mode=REQUIRED"
+        }
+    ]
+}

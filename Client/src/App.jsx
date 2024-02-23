@@ -1,41 +1,40 @@
-import { useState } from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import AuthRoute from './AuthRoute'
 import Layout from './Layout/Layout'
-import UserLayout from './Layout/UserLayout'
+import PrivateRoute from './PrivateRoute'
 import { Login, Register, Sign } from './features/Authentication/Components'
-import Author from './features/Author/Components/Author'
-import AuthorProfile from './features/Author/Components/AuthorProfile'
-import Blogs from './features/Home/Components/Blogs'
-import Home from './features/Home/Components/Home'
-import ProfileCard from './features/UserProfile/Components/Card'
-import UserProfile from './features/UserProfile/Components/UserProfile'
+import EmailVerify from './features/Authentication/Components/EmailVerify'
+import { privateRoutes, publicRoutes } from './routes'
 function App() {
-  const [count, setCount] = useState(0)
-const router = createBrowserRouter([
-  {path:'/login',element:<Login/>},
-  {path:'/sign',element:<Sign/>},
-  {path:'/register',element:<Register/>},
-  {path:'/',element:<Layout/>,children:[
-    {index:true,element:<Home/>},
-    {path:'home',element:<Home/>},
-    {path:'authors',element:<Author/>},
-    {path:'profile',element:<UserLayout/>,children:[
-      {index:true,element:<UserProfile children={<ProfileCard/>}/>},
-      {path:'blogs',element:<UserProfile children={<Blogs/>}/>},
-      {path:'like',element:<UserProfile children={<Blogs/>}/>},
-      {path:'following',element:<UserProfile children={<Author/>}/>},
-      {path:'bookmarks',element:<UserProfile children={<Blogs/>}/>}
-    ]},
-    {path:'author/1',element:<AuthorProfile/>}
-  ]},
- 
-])
+  
+  
   return (
     <>
- 
-      <RouterProvider router={router}/>
-    
+   
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout/>}>
+          {publicRoutes.map((route)=>{
+            return <Route key={route.path} path={route.path} element={route.element} />
+          })}
+           
+            <Route element={<PrivateRoute/>} >
+            {
+              privateRoutes.map((route)=>{
+                return <Route key={route.path} path={route.path} element={route.element}/>
+              })
+            }
+            </Route>
+          </Route>
+          <Route element={<AuthRoute/>}>
+            <Route path='/sign' element={<Sign/>}/>
+            <Route path='/login' element={<Login/>}/>
+          </Route>
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/verify-email' element={<EmailVerify/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

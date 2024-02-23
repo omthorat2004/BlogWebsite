@@ -1,3 +1,6 @@
+
+
+
 export const authStackStyle = {
     minHeight:'92vh',
     alignItems:'center',
@@ -11,13 +14,18 @@ export const  authBoxStyle  = {
         xs:270,
         sm:320,
         md:420
-    }
+    },
+    gap:'10px'
 }
 
+export const borderBoxStyle ={
+    border:'solid 2px #1976d2',
+    padding:'10px'
+}
 export  const authSubmitButton = {
     mt:0,
-    height:'40px'
-}
+    height:'60px'
+} 
 
 export const authTextStyle = {
     mt:2
